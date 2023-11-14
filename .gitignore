@@ -1,4 +1,5 @@
 bin
 obj
 images
-
+src/*.d
+.gitignore
