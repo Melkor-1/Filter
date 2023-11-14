@@ -41,18 +41,19 @@ static inline bool is_little_endian(void)
 
 static void help(void)
 {
-    puts("Usage: filter [OPTIONS] <infile> <outfile>\n"
+    puts("Usage: filter [OPTIONS] [FILE]\n"
          "\n\tTransform your BMP images with powerful filters.\n\n"
          "Options:\n"
          "    -s, --sepia           Apply a sepia filter for a warm, vintage look.\n"
          "    -r, --reverse         Create a horizontal reflection for a mirror effect.\n"
          "    -g, --grayscale       Convert the image to classic greyscale.\n"
          "    -b, --blur            Add a soft blur to the image.\n"
+         "    -o, --output=FILE     Writes the output to the specified file.\n"
          "    -h, --help            displays this message and exit.\n");
     exit(EXIT_SUCCESS);
 }
 
-static void err_msg(void)
+static void err_and_exit(void)
 {
     fputs("Usage: filter [OPTIONS] <infile> <outfile>\n"
           "Try filter -h for help.\n", stderr);
@@ -98,7 +99,7 @@ static void parse_options(const struct option *restrict long_options,
 
                 /* case '?' */
             default:
-                err_msg();
+                err_and_exit();
                 break;
         }
     }
@@ -192,7 +193,7 @@ int main(int argc, char *argv[])
             return EXIT_FAILURE;
         }
     } else if (optind > argc) {
-        err_msg();
+        err_and_exit();
     }
 
     if (process_image(&options, in_file, options.out_file) == -1) {

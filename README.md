@@ -12,16 +12,17 @@ Filter is a C program that allows you to apply powerful filters to BMP images. T
 ## Usage
 
 ```shell
-Usage: filter [OPTIONS] <infile> <outfile>
+Usage: filter [OPTIONS] [FILE]
 ```
 Transform your BMP images with powerful filters.
 
 ### Options:
-*  -s, --sepia       Apply a sepia filter for a warm, vintage look.
-*  -r, --reverse     Create a horizontal reflection for a mirror effect.
-*  -g, --grayscale   Convert the image to classic greyscale.
-*  -b, --blur        Add a soft blur to the image.
-*  -h, --help        Display this message and exit.
+*  -s, --sepia          Apply a sepia filter for a warm, vintage look.
+*  -r, --reverse        Create a horizontal reflection for a mirror effect.
+*  -g, --grayscale      Convert the image to classic greyscale.
+*  -b, --blur           Add a soft blur to the image.
+*  -o, --ouptput=FILE   Writes the output to the specified file.
+*  -h, --help           Display this message and exit.
 
 ## Installation
 
