@@ -5,6 +5,7 @@ Filter is a C program that allows you to apply powerful filters to BMP images. T
 ## Table of Contents
 
 - [Usage](#usage)
+- [Building](#building)
 - [Installation](#installation)
 - [Contributing](#contributing)
 - [License](#license)
