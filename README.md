@@ -24,7 +24,7 @@ Transform your BMP images with powerful filters.
 *  -o, --ouptput=FILE   Writes the output to the specified file.
 *  -h, --help           Display this message and exit.
 
-## Installation
+## Building 
 
 1. Clone the repository:
 
@@ -40,6 +40,13 @@ make
 cd bin
 ./filter --help
 ```
+## Installation:
+
+```shell
+sudo make install
+```
+By default, the program is installed to `/usr/local/bin`. The makefile can be
+configured to change the path.
 
 ## Contributing
 
