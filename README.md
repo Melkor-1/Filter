@@ -1,6 +1,6 @@
 # Filter - Transform Your BMP Images
 
-Filter is a C program that allows you to apply powerful filters to BMP images. This project is designed to demonstrate image processing and the usage of command-line arguments.
+Filter is a C program that allows you to apply powerful filters to BMP images. 
 
 ## Table of Contents
 
