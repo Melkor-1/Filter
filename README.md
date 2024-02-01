@@ -10,7 +10,6 @@ Filter is a C program that allows you to apply powerful filters to BMP images.
 - [Building](#building)
 - [Installation](#installation)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Usage
 
