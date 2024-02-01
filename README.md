@@ -1,6 +1,6 @@
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://https://github.com/Melkor-1/Filter/edit/main/LICENSE)
-
 # Filter - Transform Your BMP Images
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://https://github.com/Melkor-1/Filter/edit/main/LICENSE)
 
 Filter is a C program that allows you to apply powerful filters to BMP images. 
 
