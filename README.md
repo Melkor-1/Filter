@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://https://github.com/Melkor-1/Filter/edit/main/LICENSE)
+
 # Filter - Transform Your BMP Images
 
 Filter is a C program that allows you to apply powerful filters to BMP images. 
@@ -52,8 +54,3 @@ configured to change the path.
 ## Contributing
 
 If you want to contribute to this project or report issues, please create a new issue or pull request on GitHub.
-
-## License
-
-This project is open-source and available under the MIT License. See the [LICENSE](LICENSE) file for details.
-
