@@ -9,18 +9,15 @@
 #define SCALE_UP(x)         ((uint_fast32_t) ((x) * SCALE + 0.5))
 #define BLUR_TIMES          3
 
-static inline int min(int x, int y)
-{
-    return x < y ? x : y;
-}
+#define MIN(x, y)   ((x) < (y) ? (x) : (y))
 
 void grayscale(size_t height, size_t width, RGBTRIPLE image[height][width])
 {
     for (size_t i = 0; i < height; ++i) {
         for (size_t j = 0; j < width; ++j) {
             unsigned average =
-                image[i][j].rgbt_blue + image[i][j].rgbt_red +
-                image[i][j].rgbt_green;
+                (unsigned) (image[i][j].rgbt_blue + image[i][j].rgbt_red +
+                image[i][j].rgbt_green);
             average = (average + (average & 1u) + 1u) / 3u;
             image[i][j].rgbt_red = image[i][j].rgbt_green =
                 image[i][j].rgbt_blue = (uint8_t) average;
@@ -32,21 +29,21 @@ void sepia(size_t height, size_t width, RGBTRIPLE image[height][width])
 {
     for (size_t i = 0; i < height; ++i) {
         for (size_t j = 0; j < width; ++j) {
-            const int sepia_red =
+            const unsigned long sepia_red =
                 ((SCALE_UP(0.393) * image[i][j].rgbt_red +
                   SCALE_UP(0.769) * image[i][j].rgbt_green +
                   SCALE_UP(0.189) * image[i][j].rgbt_blue) + SCALE / 2) / SCALE;
-            const int sepia_green =
+            const unsigned long sepia_green =
                 ((SCALE_UP(0.349) * image[i][j].rgbt_red +
                   SCALE_UP(0.686) * image[i][j].rgbt_green +
                   SCALE_UP(0.168) * image[i][j].rgbt_blue) + SCALE / 2) / SCALE;
-            const int sepia_blue =
+            const unsigned long sepia_blue =
                 ((SCALE_UP(0.272) * image[i][j].rgbt_red +
                   SCALE_UP(0.534) * image[i][j].rgbt_green +
                   SCALE_UP(0.131) * image[i][j].rgbt_blue) + SCALE / 2) / SCALE;
-            image[i][j].rgbt_red = (uint8_t) min(255, sepia_red);
-            image[i][j].rgbt_blue = (uint8_t) min(255, sepia_blue);
-            image[i][j].rgbt_green = (uint8_t) min(255, sepia_green);
+            image[i][j].rgbt_red = (uint8_t) MIN(255, sepia_red);
+            image[i][j].rgbt_blue = (uint8_t) MIN(255, sepia_blue);
+            image[i][j].rgbt_green = (uint8_t) MIN(255, sepia_green);
         }
     }
 }
