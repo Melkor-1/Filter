@@ -19,21 +19,20 @@ CFLAGS 	+= -O2
 CFLAGS 	+= -D_FORTIFY_SOURCE=2
 CFLAGS	+= -MD
 
-BINDIR	:= bin
-BIN 	:= filter
-SRCS 	:= $(wildcard src/*.c)
+BIN 	     := filter
+SRCS 		 := $(wildcard src/*.c)
 INSTALL_PATH := /usr/local/bin
 
 LDLIBS 	:= -lm
 
-all: $(BINDIR)/$(BIN)
+all: $(BIN)
 
-$(BINDIR)/$(BIN): $(SRCS:.c=.o) 
+$(BIN): $(SRCS:.c=.o) 
 	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
 
 install: $(INSTALL_PATH)/$(BIN)
 
-$(INSTALL_PATH)/$(BIN): $(BINDIR)/$(BIN)
+$(INSTALL_PATH)/$(BIN): $(BIN)
 	install $< $@
 
 clean:
